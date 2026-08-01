@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; /* Premium Teal Green */
+            background: #50bfa5; /* Premium Teal Green Color */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -26,18 +26,20 @@
             width: 100%; height: 100%;
             display: none; flex-direction: column;
             align-items: center; justify-content: center;
-            padding: 25px; box-sizing: border-box; text-align: center;
+            padding: 20px; box-sizing: border-box; text-align: center;
         }
         .screen.active { display: flex; }
         
         h2 { font-size: 19px; color: #1a1a1a; margin-bottom: 12px; font-weight: bold; line-height: 1.4; }
         
+        /* Premium Text Card Frame */
         .card-frame {
             width: 95%; background: white; border: 3px solid #1a1a1a;
             border-radius: 16px; padding: 18px 12px; box-shadow: 4px 4px 0px #1a1a1a;
             margin-bottom: 20px; text-align: center; box-sizing: border-box;
         }
         
+        /* Premium Solid Buttons */
         .action-btn {
             background: #ffd43b; color: #1a1a1a; font-weight: bold; 
             padding: 10px 24px; border: 3px solid #1a1a1a;
@@ -56,66 +58,101 @@
     <div class="screen active" id="p1">
         <span style="font-size: 50px; margin-bottom: 15px;">🏛️</span>
         <h2>Welcome to the<br>Museum of Us ✨</h2>
-        <p style="font-size: 12px; color: #1a1a1a; margin-bottom: 30px; font-weight: 500;">A tiny beautiful place on the internet, made specially for Roshni.</p>
+        <p style="font-size: 12px; color: #1a1a1a; margin-bottom: 30px; font-weight: 500; line-height: 1.5;">A tiny beautiful place on the internet, made specially for Roshni.</p>
         <button class="action-btn" onclick="nextPage(2)">START TOUR →</button>
     </div>
 
-    <!-- PAGE 2: OUR FIRST MEET STORY & THANK YOU (Dono ek sath jod diya) -->
+    <!-- PAGE 2: EXHIBIT 1 - OUR FIRST MEET STORY -->
     <div class="screen" id="p2">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 12px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
         <div class="card-frame" style="background: #fff0f6; padding: 15px 12px;">
-            <span style="font-size: 28px; display:block; margin-bottom:6px;">💒🏸❤️</span>
-            <h3 style="margin: 0 0 6px 0; font-size: 13px; color: #ff3366;">Our Story 📍</h3>
-            <p style="font-size: 11px; line-height: 1.5; color: #1a1a1a; font-weight: 600;">
-                Murti Di ki shaadi... haath par mera naam likhna, badminton, cricket aur wo crazy Devghar trip! 🚂 Thank you so much for coming into my life, tumse maine bohot kuch sikha hai. ✨
+            <span style="font-size: 28px; display:block; margin-bottom:8px;">🌸💒🌿</span>
+            <h3 style="margin: 0 0 8px 0; font-size: 14px; color: #ff3366;">Our First Meet 📍</h3>
+            <p style="font-size: 11.5px; line-height: 1.6; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                Murti Di ki shaadi... jab maine tumse mehndi lagane ko kaha, aur tumne mere haath par mera hi naam likh diya! ✨ Wahan se baatein shuru huin, sabse pehle badminton 🏸 khela, phir Ludo, Cricket, Finger Fight aur Truth or Dare 🎲... Aur phir wo Devghar trip ka crazy enjoyment! 🚂❤️
             </p>
         </div>
         <button class="action-btn" onclick="nextPage(3)">NEXT EXHIBIT →</button>
     </div>
 
-    <!-- PAGE 3: FUNNY SECRETS & CHATS MASHUP -->
+    <!-- PAGE 3: EXHIBIT 2 - WEIRDNESS QUOTE -->
     <div class="screen" id="p3">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 12px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #002</span>
-        <div class="card-frame" style="background: #ffec99; padding: 15px 12px;">
-            <span style="font-size: 28px; display:block; margin-bottom:6px;">🗣️🤫😂</span>
-            <h3 style="margin: 0 0 6px 0; font-size: 13px; color: #e67e22;">The Reality Check 🚨</h3>
-            <p style="font-size: 11px; line-height: 1.5; color: #1a1a1a; font-weight: 600;">
-                Hamari bakwaas chats aur endless laughs hi meri khushi hain. 💛 Waise hum dost isliye bhi hain kyunki hum ek doosre ke itne gande raaz (secrets) jaante hain ki dosti tooti toh dono barbaad ho jayenge! 😂
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #002</span>
+        <div class="card-frame" style="background: #f3f0ff;">
+            <span style="font-size: 35px; display:block; margin-bottom:12px;">🤪🤝✨</span>
+            <p style="font-size: 13.5px; font-weight: bold; color: #1a1a1a; line-height: 1.6; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
+        </div>
+        <button class="action-btn" onclick="nextPage(4)">NEXT EXHIBIT →</button>
+    </div>
+
+    <!-- PAGE 4: EXHIBIT 3 - THE TEXT MESSAGE -->
+    <div class="screen" id="p4">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
+        <div class="card-frame" style="background: #fdf6e2;">
+            <span style="font-size: 35px; display:block; margin-bottom:12px;">🗣️📞😹</span>
+            <p style="font-size: 14px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                "Hamari bakwaas chats, random calls aur endless laughs... this is the best part and real reason of my happiness. 💛"
             </p>
         </div>
-        <button class="action-btn" onclick="nextPage(4)">WISH ME 🎉</button>
+        <button class="action-btn" onclick="nextPage(5)">NEXT EXHIBIT →</button>
     </div>
 
-    <!-- PAGE 4: HAPPY FRIENDSHIP DAY + FINAL VERDICT (Super combo lock) -->
-    <div class="screen" id="p4">
-        <span style="font-size: 35px; margin-bottom: 5px;">🌸🎉🔒</span>
-        <h2 style="font-size: 16px; font-weight: bold; color: #ff3366; margin: 5px 0;">✨ Happy Friendship Day Roshni ✨</h2>
+    <!-- PAGE 5: EXHIBIT 4 - THANK YOU MESSAGE -->
+    <div class="screen" id="p5">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #004</span>
+        <div class="card-frame" style="background: #eef3ff; padding: 25px 15px;">
+            <span style="font-size: 38px; display:block; margin-bottom:12px;">🙌💡❤️</span>
+            <p style="font-size: 14px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                "Thank you so much for coming into my life... 🌸 Tumhare aane se maine zindagi mein bohot kuch sikha hai. You made everything better! ✨"
+            </p>
+        </div>
+        <button class="action-btn" onclick="nextPage(6)">NEXT EXHIBIT →</button>
+    </div>
+
+    <!-- PAGE 6: EXHIBIT 5 - THE PROMISE -->
+    <div class="screen" id="p6">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #005</span>
+        <div class="card-frame" style="background: #fff9db; padding: 25px 15px;">
+            <span style="font-size: 38px; display:block; margin-bottom:12px;">✊🌟♾️</span>
+            <p style="font-size: 14px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                "Chahe kitne bhi jhagde ho jayein ya kitne bhi busy ho jayein, par humari yeh dosti kabhi kam nahi hogi. I promise to always annoy you forever! 🫵🔥"
+            </p>
+        </div>
+        <button class="action-btn" onclick="nextPage(7)">NEXT EXHIBIT →</button>
+    </div>
+
+    <!-- PAGE 7: EXHIBIT 6 - THE FUNNY SECRET (NEW PAGE) -->
+    <div class="screen" id="p7">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #006</span>
+        <div class="card-frame" style="background: #ffec99; padding: 25px 15px;">
+            <span style="font-size: 40px; display:block; margin-bottom:12px;">🤫🫵😂</span>
+            <h3 style="margin: 0 0 8px 0; font-size: 14px; color: #e67e22;">The Ultimate Reason 🚨</h3>
+            <p style="font-size: 14px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                "Waise hum dost isliye bhi hain kyunki hum dono ek doosre ke itne saare gande raaz (secrets) jaante hain ki agar dosti tooti... toh dono ek doosre ko barbaad kar denge! 😂 Spy level secrets lock hain hamare paas!"
+            </p>
+        </div>
+        <button class="action-btn" onclick="nextPage(8)">NEXT EXHIBIT →</button>
+    </div>
+
+    <!-- PAGE 8: EXHIBIT 7 - THE WISH -->
+    <div class="screen" id="p8">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #007</span>
+        <div class="card-frame" style="background: #e3faf2;">
+            <span style="font-size: 40px; display:block; margin-bottom:12px;">🥳🎉🌸</span>
+            <h2 style="font-size: 18px; font-weight: bold; color: #ff3366; margin: 0; line-height:1.5;">✨ Happy Friendship Day Roshni ✨</h2>
+            <p style="font-size: 12px; color: #555; margin-top: 8px; font-weight: 500;">You are absolutely irreplaceable! 👑</p>
+        </div>
+        <button class="action-btn" onclick="nextPage(9)">VERIFY TOUR →</button>
+    </div>
+
+    <!-- PAGE 9: THE FINAL LOCK -->
+    <div class="screen" id="p9">
+        <span style="font-size: 35px; margin-bottom: 10px;">🔒</span>
+        <p style="font-size: 11px; color: #777; font-weight: bold; margin: 0;">FINAL VERDICT:</p>
+        <h1 style="font-size: 20px; font-weight: 900; color: #1a1a1a; margin: 10px 0 12px; line-height: 1.3;">YOU KNOW WAY TOO MUCH.</h1>
+        <p style="font-size: 12.5px; color: #444; margin: 0 15px 20px; line-height: 1.6;">Unfortunately, there is no escape now. We are friends for life.</p>
         
-        <div style="background: #ffe3e3; border: 3px dashed #ffc9c9; padding: 8px; font-weight: bold; font-size: 11px; color: #c92a2a; border-radius: 12px; margin: 10px 0;">
-            FINAL VERDICT: YOU KNOW WAY TOO MUCH.<br>NO CANCELLATIONS. NO REFUNDS.
+        <div style="background: #ffe3e3; border: 3px dashed #ffc9c9; padding: 10px; font-weight: bold; font-size: 12px; color: #c92a2a; border-radius: 12px; margin-bottom: 25px;">
+            NO CANCELLATIONS.<br>NO REFUNDS.
         </div>
         
-        <p style="font-size: 11px; color: #444; margin-bottom: 15px; font-weight: 500;">Unfortunately, we are now friends for life! 🤝❤️</p>
-        <button class="action-btn" style="background: #ffd43b; width: 90%;" onclick="alert('Dosti Confirm! System Permanently Locked! 🤝❤️')">ACCEPT MY FATE</button>
-    </div>
-
-</div>
-
-<script>
-    function nextPage(pageNum) {
-        var screens = document.querySelectorAll('.screen');
-        for (var i = 0; i < screens.length; i++) {
-            screens[i].classList.remove('active');
-        }
-        document.getElementById('p' + pageNum).classList.add('active');
-        
-        var box = document.getElementById('main-box');
-        if (pageNum === 1) box.style.background = '#50bfa5'; 
-        else if (pageNum === 2) box.style.background = '#e9e4db'; 
-        else if (pageNum === 3) box.style.background = '#fab005'; 
-        else box.style.background = '#fbf7f4'; 
-    }
-</script>
-
-</body>
-</html>
