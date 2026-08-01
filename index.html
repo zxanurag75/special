@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; /* Same exact Teal Green Color */
+            background: #50bfa5; /* Teal Green */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -30,7 +30,6 @@
         .screen.active { display: flex; }
         
         h2 { font-size: 18px; color: #1a1a1a; margin-bottom: 10px; font-weight: bold; }
-        .sub { font-size: 12px; color: #1a1a1a; margin-bottom: 15px; font-weight: 500; }
         
         /* Same Polaroid Style White Frame */
         .card-frame {
@@ -41,7 +40,8 @@
         .pic-box {
             width: 100%; height: 190px;
             border: 2px solid #1a1a1a; border-radius: 10px;
-            background-image: url('https://unsplash.com');
+            /* 👇 Yahan par maine ek bahut hi cute dosti ka animation gif set kar diya hai */
+            background-image: url('https://giphy.com');
             background-size: cover; background-position: center;
             margin-bottom: 12px;
         }
@@ -51,11 +51,9 @@
             border-radius: 12px; cursor: pointer; box-shadow: 2px 2px 0px #1a1a1a;
             font-size: 12px;
         }
-        .btn-delete { background: #ff6b6b; color: white; transition: all 0.1s ease; }
+        .btn-delete { background: #ff6b6b; color: white; position: relative; transition: all 0.1s ease; }
         .btn-keep { background: #ffffff; color: #1a1a1a; }
         .btn-final { background: #ffd43b; color: #1a1a1a; width: 85%; padding: 12px; font-size: 14px; font-weight: bold; border: 2px solid #1a1a1a; border-radius: 12px; box-shadow: 3px 3px 0px #1a1a1a; cursor: pointer; }
-
-        /* Final Screen Button style */
         .accept-btn { background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 12px 25px; border: 3px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 4px 4px 0px #1a1a1a; font-size: 14px; margin-top: 15px; }
     </style>
 </head>
@@ -67,7 +65,7 @@
     <div class="screen active" id="s1">
         <h2>Let's clean up our<br>friendship history.</h2>
         <div class="btn-row" style="margin-bottom: 15px;">
-            <button class="action-btn btn-delete" id="del-btn" onmouseover="runAway()">← DELETE</button>
+            <button class="action-btn btn-delete" id="del-btn" onmouseover="runAway()" onclick="runAway()">← DELETE</button>
             <button class="action-btn btn-keep" onclick="goToScreen(2)">KEEP →</button>
         </div>
         <div class="card-frame">
@@ -80,7 +78,7 @@
     <div class="screen" id="s2">
         <h2>Let's clean up our<br>friendship history.</h2>
         <div class="btn-row" style="margin-bottom: 15px;">
-            <button class="action-btn btn-delete" style="opacity:0.5; cursor:not-allowed;">← DELETE</button>
+            <button class="action-btn btn-delete" style="opacity:0.5; cursor:not-allowed;" disabled>← DELETE</button>
             <button class="action-btn btn-keep" style="background:#ffd43b;">KEEP →</button>
         </div>
         <div class="card-frame">
@@ -115,8 +113,8 @@
 
     function runAway() {
         const btn = document.getElementById('del-btn');
-        const randomX = Math.floor(Math.random() * 60) - 30;
-        const randomY = Math.floor(Math.random() * 40) - 20;
+        const randomX = Math.floor(Math.random() * 120) - 60;
+        const randomY = Math.floor(Math.random() * 80) - 40;
         btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
     }
 </script>
