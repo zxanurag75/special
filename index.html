@@ -14,12 +14,13 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; /* Teal Green */
+            background: #cbd3e3; /* Screen 1 background */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
             display: flex; flex-direction: column; align-items: center;
             border: 4px solid #1a1a1a;
+            transition: background 0.3s ease;
         }
         .screen {
             width: 100%; height: 100%;
@@ -28,96 +29,158 @@
             padding: 20px; box-sizing: border-box; text-align: center;
         }
         .screen.active { display: flex; }
+
+        /* SCREEN 1 & 2: RED DOOR ANIMATION */
+        .door-container {
+            width: 100%; display: flex; flex-direction: column; align-items: center;
+        }
+        .red-door {
+            width: 110px; height: 180px; background: #e74c3c;
+            border: 4px solid #1a1a1a; border-radius: 50px 50px 0 0;
+            position: relative; cursor: pointer; margin-bottom: 25px;
+            box-shadow: 5px 5px 0px #1a1a1a;
+            transition: transform 0.8s ease;
+            transform-origin: left;
+        }
+        .red-door.open {
+            transform: perspective(1200px) rotateY(-105deg);
+        }
+        .door-knob {
+            width: 12px; height: 12px; background: #ffd43b;
+            border: 2px solid #1a1a1a; border-radius: 50%;
+            position: absolute; right: 15px; top: 50%;
+        }
+        .door-btn {
+            background: white; border: 3px solid #1a1a1a; padding: 10px 22px;
+            border-radius: 14px; font-weight: bold; cursor: pointer; 
+            box-shadow: 4px 4px 0px #1a1a1a; font-size: 13px; margin-top: 15px;
+        }
         
-        h2 { font-size: 18px; color: #1a1a1a; margin-bottom: 10px; font-weight: bold; }
-        
-        /* Same Polaroid Style White Frame */
+        /* SCREEN 3: YELLOW MUSEUM HUBS */
+        .hub-row { display: flex; gap: 10px; margin: 25px 0; }
+        .exhibit-thumb {
+            width: 80px; height: 105px; background: white;
+            border: 3px solid #1a1a1a; border-radius: 12px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: bold; cursor: pointer; box-shadow: 3px 3px 0px #1a1a1a;
+        }
+
+        /* SCREEN 4, 5, 6: EXHIBITS STYLE */
         .card-frame {
-            width: 80%; background: white; border: 3px solid #1a1a1a;
+            width: 85%; background: white; border: 3px solid #1a1a1a;
             border-radius: 16px; padding: 15px; box-shadow: 4px 4px 0px #1a1a1a;
-            margin-bottom: 15px; text-align: center;
+            margin-bottom: 20px; text-align: center;
         }
         .pic-box {
-            width: 100%; height: 190px;
-            border: 2px solid #1a1a1a; border-radius: 10px;
-            /* Dono screens ke liye animation link fix kar diya hai */
-            background-image: url('https://giphy.com');
-            background-size: cover; background-position: center;
-            margin-bottom: 12px;
+            width: 100%; height: 190px; border: 2px solid #1a1a1a; border-radius: 10px;
+            background-size: cover; background-position: center; margin-bottom: 12px;
         }
-        .btn-row { display: flex; gap: 15px; justify-content: center; width: 100%; position: relative; }
+
+        /* CURTAIN ANIMATION (EXHIBIT 003) */
+        .curtain-container {
+            width: 100%; height: 190px; border: 2px solid #1a1a1a; border-radius: 10px;
+            position: relative; overflow: hidden; cursor: pointer; margin-bottom: 12px;
+        }
+        .red-curtain {
+            width: 100%; height: 100%; background: #c92a2a;
+            background-image: repeating-linear-gradient(90deg, #c92a2a, #c92a2a 10px, #b01e1e 10px, #b01e1e 20px);
+            position: absolute; top: 0; left: 0; transition: transform 1s ease;
+        }
+        .red-curtain.pull { transform: translateY(-100%); }
+
+        /* BUTTON GENERICS */
         .action-btn {
-            padding: 8px 18px; font-weight: bold; border: 2px solid #1a1a1a;
-            border-radius: 12px; cursor: pointer; box-shadow: 2px 2px 0px #1a1a1a;
-            font-size: 12px;
+            background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 10px 22px;
+            border: 2px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 3px 3px 0px #1a1a1a;
         }
-        .btn-delete { background: #ff6b6b; color: white; position: relative; transition: all 0.1s ease; }
-        .btn-keep { background: #ffffff; color: #1a1a1a; }
-        .btn-final { background: #ffd43b; color: #1a1a1a; width: 85%; padding: 12px; font-size: 14px; font-weight: bold; border: 2px solid #1a1a1a; border-radius: 12px; box-shadow: 3px 3px 0px #1a1a1a; cursor: pointer; }
-        .accept-btn { background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 12px 25px; border: 3px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 4px 4px 0px #1a1a1a; font-size: 14px; margin-top: 15px; }
+        .red-btn {
+            width: 100px; height: 100px; background: #ff4d4d; border: 4px solid #1a1a1a;
+            border-radius: 50%; box-shadow: 0 8px 0 #b32424, 0 15px 20px rgba(0,0,0,0.2);
+            cursor: pointer; transition: all 0.1s ease;
+        }
+        .red-btn:active { transform: translateY(4px); box-shadow: 0 4px 0 #b32424, 0 8px 10px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
-<div class="app-container">
+<div class="app-container" id="bg-box">
 
-    <!-- SCREEN 1: THE PRANK -->
+    <!-- SCREEN 1: KNOCK KNOCK DOOR -->
     <div class="screen active" id="s1">
-        <h2>Let's clean up our<br>friendship history.</h2>
-        <div class="btn-row" style="margin-bottom: 15px;">
-            <button class="action-btn btn-delete" id="del-btn" onmouseover="runAway()" onclick="runAway()">← DELETE</button>
-            <button class="action-btn btn-keep" onclick="goToScreen(2)">KEEP →</button>
-        </div>
-        <div class="card-frame">
-            <div class="pic-box"></div>
-            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; margin: 0;">no takebacks!</p>
+        <div class="door-container">
+            <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; color: #333; font-weight: 500;">knock knock...</p>
+            <div class="red-door" id="main-gate" onclick="openGate()">
+                <div class="door-knob"></div>
+            </div>
+            <h2>HEY ROSHNI ❤️.</h2>
+            <p style="font-size: 11px; color:#444; margin: 5px 0 15px; font-weight: 500;">I made a tiny place on the internet for you.<br><span style="color:#ff3366; font-weight:bold; border-bottom:2px dashed #ff3366;">There is only one rule.</span></p>
+            <button class="door-btn" onclick="openGate()">WHAT'S THE RULE?</button>
         </div>
     </div>
 
-    <!-- SCREEN 2: FRIENDSHIP CARD -->
+    <!-- SCREEN 2: WELCOME TO MUSEUM HUBS -->
     <div class="screen" id="s2">
-        <h2>Let's clean up our<br>friendship history.</h2>
-        <div class="btn-row" style="margin-bottom: 15px;">
-            <button class="action-btn btn-delete" style="opacity:0.5; cursor:not-allowed;" disabled>← DELETE</button>
-            <button class="action-btn btn-keep" style="background:#ffd43b;">KEEP →</button>
+        <h2>Welcome to the extremely<br>prestigious Museum of Us.</h2>
+        <p style="font-size: 11px; color: #555;">Please don't touch anything... obviously, touch everything.</p>
+        
+        <div class="hub-row">
+            <div class="exhibit-thumb" onclick="goScreen(3)">
+                <span style="font-size:18px; margin-bottom:5px;">🎬</span> EXHIBIT 001 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
+            </div>
+            <div class="exhibit-thumb" onclick="goScreen(4)">
+                <span style="font-size:18px; margin-bottom:5px;">💬</span> EXHIBIT 002 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
+            </div>
+            <div class="exhibit-thumb" onclick="goScreen(5)">
+                <span style="font-size:18px; margin-bottom:5px;">🏛️</span> EXHIBIT 003 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
+            </div>
         </div>
+        <button class="action-btn" onclick="goScreen(6)">FINISH TOUR →</button>
+    </div>
+
+    <!-- SCREEN 3: EXHIBIT 001 (PRANK CARD) -->
+    <div class="screen" id="s3" style="background:#e9e4db;">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #001</span>
+        <div class="card-frame" style="background:#20c997;">
+            <p style="font-size:14px; font-weight:bold; color:white;">Let's clean up our friendship history.</p>
+            <div style="display:flex; gap:10px; justify-content:center; margin:15px 0;">
+                <button class="action-btn" style="background:#ff6b6b; color:white;" onmouseover="runAway(this)">DELETE</button>
+                <button class="action-btn" style="background:white;" onclick="alert('Smart choice! History kept safe! ❤️')">KEEP</button>
+            </div>
+            <p style="font-size:10px; font-weight:bold; color:white;">no takebacks!</p>
+        </div>
+        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
+    </div>
+
+    <!-- SCREEN 4: EXHIBIT 002 (TEXT MESSAGE) -->
+    <div class="screen" id="s4" style="background:#e9e4db;">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #002</span>
         <div class="card-frame">
-            <div class="pic-box"></div>
-            <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0;">✨ Happy Friendship Day Roshni ✨</p>
-            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; margin: 0;">no takebacks!</p>
+            <p style="font-size: 14px; line-height: 1.6; color: #1a1a1a; font-weight: 500; text-align:left;">
+                "Hamari bakwaas chats 🗣️, random calls 📞 aur endless laughs 😹... this is the best part and reason of my happiness. 💛"
+            </p>
         </div>
-        <button class="btn-final" onclick="goToScreen(3)">NEXT STEPS →</button>
+        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
     </div>
 
-    <!-- SCREEN 3: FINAL VERDICT -->
-    <div class="screen" id="s3" style="background: #fbf7f4;">
-        <h2>do NOT.</h2>
-        <p style="font-size: 11px; font-weight: bold; color: #777; margin-top:0;">RESULT:</p>
-        <h1 style="font-size: 20px; font-weight: 900; color: #1a1a1a; margin: 10px 0;">YOU KNOW WAY TOO MUCH.</h1>
-        <p style="font-size: 13px; color: #555; line-height: 1.5; margin: 5px 20px;">Unfortunately, we are now friends for life.</p>
-        
-        <div style="background:#fff3cd; padding:6px 12px; border:2px dashed #ffeeba; border-radius:8px; font-size:11px; font-weight:bold; color:#b78103; margin: 10px 0;">
-            NO CANCELLATIONS.<br>NO REFUNDS.
+    <!-- SCREEN 5: EXHIBIT 003 (CURTAIN & YOUR ACTUAL PHOTO) -->
+    <div class="screen" id="s5" style="background:#e9e4db;">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #003</span>
+        <div class="card-frame">
+            <p style="font-size:11px; font-weight:bold; margin-bottom:8px;">Proof that friendship is mostly just finding one person whose weirdness is compatible with yours.</p>
+            <div class="curtain-container" onclick="pullCurtain()">
+                <!-- Tum dono ki asli photo perfectly embedded hai -->
+                <div class="pic-box" style="background-image: url('https://postimg.cc'); height:100%; margin:0;"></div>
+                <div class="red-curtain" id="curtain-layer"></div>
+            </div>
+            <p style="font-size:10px; color:#777;" id="curtain-hint">👆 pull the curtain aside</p>
         </div>
-        
-        <button class="accept-btn" onclick="alert('System Locked! Dosti confirm ho gayi hai! 🤝❤️')">ACCEPT MY FATE</button>
+        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
     </div>
 
-</div>
-
-<script>
-    function goToScreen(num) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('s' + num).classList.add('active');
-    }
-
-    function runAway() {
-        const btn = document.getElementById('del-btn');
-        const randomX = Math.floor(Math.random() * 120) - 60;
-        const randomY = Math.floor(Math.random() * 80) - 40;
-        btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
-    }
-</script>
-
-</body>
-</html>
+    <!-- SCREEN 6: DO NOT PRESS RED BUTTON -->
+    <div class="screen" id="s6" style="background:#fbf7f4;">
+        <h2 style="color:#777; font-size:16px;">do NOT.</h2>
+        <div style="background:#ffd43b; border:2px solid #1a1a1a; padding:4px 15px; font-weight:bold; font-size:11px; border-radius:8px; margin: 15px 0 30px;">DO NOT PRESS</div>
+        <div class="red-btn" onclick="startDiagnostic()"></div>
+        <p style="font-size:11px; color:#777; margin-top:15px;">seriously, do not.</p>
+    </div>
