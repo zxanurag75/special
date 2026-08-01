@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; /* Premium Teal Green Color */
+            background: #50bfa5; 
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -32,7 +32,6 @@
         
         h2 { font-size: 19px; color: #1a1a1a; margin-bottom: 15px; font-weight: bold; line-height: 1.4; }
         
-        /* Premium Scrapbook Polaroid Frame */
         .card-frame {
             width: 90%; background: white; border: 3px solid #1a1a1a;
             border-radius: 16px; padding: 15px; box-shadow: 5px 5px 0px #1a1a1a;
@@ -45,7 +44,6 @@
             margin-bottom: 12px;
         }
         
-        /* Premium Solid Buttons */
         .action-btn {
             background: #ffd43b; color: #1a1a1a; font-weight: bold; 
             padding: 12px 28px; border: 3px solid #1a1a1a;
@@ -60,7 +58,7 @@
 
 <div class="app-container" id="main-box">
 
-    <!-- PAGE 1: THE WELCOME COVER -->
+    <!-- PAGE 1: COVER -->
     <div class="screen active" id="p1">
         <span style="font-size: 40px; margin-bottom: 15px;">🏛️</span>
         <h2 style="font-size: 22px;">Welcome to the<br>Museum of Us ✨</h2>
@@ -68,12 +66,12 @@
         <button class="action-btn" onclick="nextPage(2)">START TOUR →</button>
     </div>
 
-    <!-- PAGE 2: EXHIBIT 1 - BOTH OF YOU -->
+    <!-- PAGE 2: EXHIBIT 1 - MAIN PHOTO (Aap dono ki sath wali) -->
     <div class="screen" id="p2">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
         <div class="card-frame">
-            <!-- Ab direct local path de diya hai bina kisi error ke photo uthane ke liye -->
-            <div class="pic-box" style="background-image: url('photo1.png');"></div>
+            <!-- Fixed GitHub direct link for both of you -->
+            <div class="pic-box" style="background-image: url('https://githubusercontent.com');"></div>
             <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
         </div>
         <button class="action-btn" onclick="nextPage(3)">NEXT EXHIBIT →</button>
@@ -90,12 +88,12 @@
         <button class="action-btn" onclick="nextPage(4)">NEXT EXHIBIT →</button>
     </div>
 
-    <!-- PAGE 4: EXHIBIT 3 - ROSHNI NEW PHOTO REVEAL -->
+    <!-- PAGE 4: EXHIBIT 3 - ROSHNI SINGLE PHOTO REVEAL -->
     <div class="screen" id="p4">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
         <div class="card-frame">
-            <!-- Roshni ki single photo ka direct local address -->
-            <div class="pic-box" style="background-image: url('photo2.png');"></div>
+            <!-- Fixed GitHub direct link for Roshni's single photo -->
+            <div class="pic-box" style="background-image: url('https://githubusercontent.com');"></div>
             <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0 0;">✨ Happy Friendship Day Roshni ✨</p>
         </div>
         <button class="action-btn" onclick="nextPage(5)">VERIFY TOUR →</button>
