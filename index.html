@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; /* Vahi dhasu Teal Green Color */
+            background: #50bfa5; /* Premium Teal Green Color */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -72,8 +72,8 @@
     <div class="screen" id="p2">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
         <div class="card-frame">
-            <!-- Tum dono ki pehli wali photo -->
-            <div class="pic-box" style="background-image: url('https://postimg.cc');"></div>
+            <!-- Superfast fixed server url for both of your photo -->
+            <div class="pic-box" style="background-image: url('https://githubusercontent.com');"></div>
             <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
         </div>
         <button class="action-btn" onclick="nextPage(3)">NEXT EXHIBIT →</button>
@@ -94,8 +94,8 @@
     <div class="screen" id="p4">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
         <div class="card-frame">
-            <!-- 👇 Roshni ki abhi bheji hui single pyaari photo -->
-            <div class="pic-box" style="background-image: url('https://postimg.cc');"></div>
+            <!-- Superfast fixed direct image link for Roshni's single photo -->
+            <div class="pic-box" style="background-image: url('https://weserv.nl');"></div>
             <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0 0;">✨ Happy Friendship Day Roshni ✨</p>
         </div>
         <button class="action-btn" onclick="nextPage(5)">VERIFY TOUR →</button>
@@ -119,20 +119,17 @@
 
 <script>
     function nextPage(pageNum) {
-        // Saari screens ko band karo
         var screens = document.querySelectorAll('.screen');
         for (var i = 0; i < screens.length; i++) {
             screens[i].classList.remove('active');
         }
-        // Sirf target page ko chalu karo
         document.getElementById('p' + pageNum).classList.add('active');
         
-        // Dynamic background colors according to scrapbook pages
         var box = document.getElementById('main-box');
-        if (pageNum === 1) box.style.background = '#50bfa5'; // Teal
-        else if (pageNum === 3) box.style.background = '#fcc419'; // Yellow Theme
-        else if (pageNum === 5) box.style.background = '#fbf7f4'; // Final White
-        else box.style.background = '#e9e4db'; // Soft Retro Card color
+        if (pageNum === 1) box.style.background = '#50bfa5'; 
+        else if (pageNum === 3) box.style.background = '#fcc419'; 
+        else if (pageNum === 5) box.style.background = '#fbf7f4'; 
+        else box.style.background = '#e9e4db'; 
     }
 </script>
 
