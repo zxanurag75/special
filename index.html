@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #50bfa5; 
+            background: #50bfa5; /* Premium Teal Green Color */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -30,20 +30,16 @@
         }
         .screen.active { display: flex; }
         
-        h2 { font-size: 19px; color: #1a1a1a; margin-bottom: 15px; font-weight: bold; line-height: 1.4; }
+        h2 { font-size: 20px; color: #1a1a1a; margin-bottom: 15px; font-weight: bold; line-height: 1.4; }
         
+        /* Premium Text Card Frame */
         .card-frame {
             width: 90%; background: white; border: 3px solid #1a1a1a;
-            border-radius: 16px; padding: 15px; box-shadow: 5px 5px 0px #1a1a1a;
-            margin-bottom: 25px; text-align: center;
-        }
-        .pic-box {
-            width: 100%; height: 230px;
-            border: 2px solid #1a1a1a; border-radius: 10px;
-            background-size: cover; background-position: center;
-            margin-bottom: 12px;
+            border-radius: 16px; padding: 25px 20px; box-shadow: 5px 5px 0px #1a1a1a;
+            margin-bottom: 30px; text-align: center;
         }
         
+        /* Premium Solid Buttons */
         .action-btn {
             background: #ffd43b; color: #1a1a1a; font-weight: bold; 
             padding: 12px 28px; border: 3px solid #1a1a1a;
@@ -58,50 +54,50 @@
 
 <div class="app-container" id="main-box">
 
-    <!-- PAGE 1: COVER -->
+    <!-- PAGE 1: THE WELCOME COVER -->
     <div class="screen active" id="p1">
-        <span style="font-size: 40px; margin-bottom: 15px;">🏛️</span>
-        <h2 style="font-size: 22px;">Welcome to the<br>Museum of Us ✨</h2>
-        <p style="font-size: 12px; color: #1a1a1a; margin-bottom: 30px; font-weight: 500;">A tiny beautiful place on the internet, made specially for Roshni.</p>
+        <span style="font-size: 50px; margin-bottom: 20px;">🏛️</span>
+        <h2>Welcome to the<br>Museum of Us ✨</h2>
+        <p style="font-size: 13px; color: #1a1a1a; margin-bottom: 35px; font-weight: 500; line-height: 1.5;">A tiny beautiful place on the internet, made specially for Roshni.</p>
         <button class="action-btn" onclick="nextPage(2)">START TOUR →</button>
     </div>
 
-    <!-- PAGE 2: EXHIBIT 1 - MAIN PHOTO (Aap dono ki sath wali) -->
+    <!-- PAGE 2: EXHIBIT 1 - WEIRDNESS QUOTE -->
     <div class="screen" id="p2">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
-        <div class="card-frame">
-            <!-- Fixed GitHub direct link for both of you -->
-            <div class="pic-box" style="background-image: url('https://githubusercontent.com');"></div>
-            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 4px 14px; font-size: 11px; font-weight: bold; border-radius: 20px; margin-bottom: 20px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
+        <div class="card-frame" style="background: #fff0f6;">
+            <span style="font-size: 35px; display:block; margin-bottom:15px;">🤪🤝❤️</span>
+            <p style="font-size: 14px; font-weight: bold; color: #1a1a1a; line-height: 1.6; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
         </div>
         <button class="action-btn" onclick="nextPage(3)">NEXT EXHIBIT →</button>
     </div>
 
     <!-- PAGE 3: EXHIBIT 2 - THE TEXT MESSAGE -->
     <div class="screen" id="p3">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 20px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #002</span>
-        <div class="card-frame" style="background: #fdf6e2; padding: 25px 20px;">
-            <p style="font-size: 15px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: left; margin: 0;">
-                "Hamari bakwaas chats 🗣️, random calls 📞 aur endless laughs 😹... this is the best part and real reason of my happiness. 💛"
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 4px 14px; font-size: 11px; font-weight: bold; border-radius: 20px; margin-bottom: 20px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #002</span>
+        <div class="card-frame" style="background: #fdf6e2; padding: 30px 20px;">
+            <span style="font-size: 35px; display:block; margin-bottom:15px;">🗣️📞😹</span>
+            <p style="font-size: 15px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: center; margin: 0;">
+                "Hamari bakwaas chats, random calls aur endless laughs... this is the best part and real reason of my happiness. 💛"
             </p>
         </div>
         <button class="action-btn" onclick="nextPage(4)">NEXT EXHIBIT →</button>
     </div>
 
-    <!-- PAGE 4: EXHIBIT 3 - ROSHNI SINGLE PHOTO REVEAL -->
+    <!-- PAGE 4: EXHIBIT 3 - THE WISH -->
     <div class="screen" id="p4">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
-        <div class="card-frame">
-            <!-- Fixed GitHub direct link for Roshni's single photo -->
-            <div class="pic-box" style="background-image: url('https://githubusercontent.com');"></div>
-            <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0 0;">✨ Happy Friendship Day Roshni ✨</p>
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 4px 14px; font-size: 11px; font-weight: bold; border-radius: 20px; margin-bottom: 20px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
+        <div class="card-frame" style="background: #e3faf2;">
+            <span style="font-size: 45px; display:block; margin-bottom:15px;">🌸🎉✨</span>
+            <h2 style="font-size: 18px; font-weight: bold; color: #ff3366; margin: 0; line-height:1.5;">✨ Happy Friendship Day Roshni ✨</h2>
+            <p style="font-size: 12px; color: #555; margin-top: 10px; font-weight: 500;">You are absolutely irreplaceable! 👑</p>
         </div>
         <button class="action-btn" onclick="nextPage(5)">VERIFY TOUR →</button>
     </div>
 
     <!-- PAGE 5: THE FINAL LOCK -->
     <div class="screen" id="p5">
-        <span style="font-size: 35px; margin-bottom: 10px;">🔒</span>
+        <span style="font-size: 40px; margin-bottom: 15px;">🔒</span>
         <p style="font-size: 11px; color: #777; font-weight: bold; margin: 0;">FINAL VERDICT:</p>
         <h1 style="font-size: 21px; font-weight: 900; color: #1a1a1a; margin: 10px 0 15px; line-height: 1.3;">YOU KNOW WAY TOO MUCH.</h1>
         <p style="font-size: 13px; color: #444; margin: 0 15px 25px; line-height: 1.6;">Unfortunately, there is no escape now. We are friends for life.</p>
