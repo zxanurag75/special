@@ -14,173 +14,127 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #cbd3e3; /* Screen 1 Background */
+            background: #50bfa5; /* Vahi dhasu Teal Green Color */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
             display: flex; flex-direction: column; align-items: center;
             border: 4px solid #1a1a1a;
-            transition: background 0.2s ease;
+            transition: background 0.4s ease;
         }
         .screen {
             width: 100%; height: 100%;
             display: none; flex-direction: column;
             align-items: center; justify-content: center;
-            padding: 20px; box-sizing: border-box; text-align: center;
+            padding: 25px; box-sizing: border-box; text-align: center;
         }
         .screen.active { display: flex; }
-
-        /* SCREEN 1 & 2: RED DOOR STYLE */
-        .door-container {
-            width: 100%; display: flex; flex-direction: column; align-items: center;
-        }
-        .red-door {
-            width: 110px; height: 180px; background: #e74c3c;
-            border: 4px solid #1a1a1a; border-radius: 50px 50px 0 0;
-            position: relative; cursor: pointer; margin-bottom: 25px;
-            box-shadow: 5px 5px 0px #1a1a1a;
-        }
-        .door-knob {
-            width: 12px; height: 12px; background: #ffd43b;
-            border: 2px solid #1a1a1a; border-radius: 50%;
-            position: absolute; right: 15px; top: 50%;
-        }
-        .door-btn {
-            background: white; border: 3px solid #1a1a1a; padding: 10px 22px;
-            border-radius: 14px; font-weight: bold; cursor: pointer; 
-            box-shadow: 4px 4px 0px #1a1a1a; font-size: 13px; margin-top: 15px;
-        }
         
-        /* SCREEN 3: YELLOW MUSEUM HUBS */
-        .hub-row { display: flex; gap: 10px; margin: 25px 0; }
-        .exhibit-thumb {
-            width: 80px; height: 105px; background: white;
-            border: 3px solid #1a1a1a; border-radius: 12px;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            font-size: 10px; font-weight: bold; cursor: pointer; box-shadow: 3px 3px 0px #1a1a1a;
-        }
-
-        /* SCREEN 4, 5, 6: EXHIBITS STYLE */
+        h2 { font-size: 19px; color: #1a1a1a; margin-bottom: 15px; font-weight: bold; line-height: 1.4; }
+        
+        /* Premium Scrapbook Polaroid Frame */
         .card-frame {
-            width: 85%; background: white; border: 3px solid #1a1a1a;
-            border-radius: 16px; padding: 15px; box-shadow: 4px 4px 0px #1a1a1a;
-            margin-bottom: 20px; text-align: center;
+            width: 90%; background: white; border: 3px solid #1a1a1a;
+            border-radius: 16px; padding: 15px; box-shadow: 5px 5px 0px #1a1a1a;
+            margin-bottom: 25px; text-align: center;
         }
         .pic-box {
-            width: 100%; height: 190px; border: 2px solid #1a1a1a; border-radius: 10px;
-            background-size: cover; background-position: center; margin-bottom: 12px;
+            width: 100%; height: 230px;
+            border: 2px solid #1a1a1a; border-radius: 10px;
+            background-size: cover; background-position: center;
+            margin-bottom: 12px;
         }
-
-        /* CURTAIN ANIMATION (EXHIBIT 003) */
-        .curtain-container {
-            width: 100%; height: 190px; border: 2px solid #1a1a1a; border-radius: 10px;
-            position: relative; overflow: hidden; cursor: pointer; margin-bottom: 12px;
-        }
-        .red-curtain {
-            width: 100%; height: 100%; background: #c92a2a;
-            background-image: repeating-linear-gradient(90deg, #c92a2a, #c92a2a 10px, #b01e1e 10px, #b01e1e 20px);
-            position: absolute; top: 0; left: 0; transition: transform 0.6s ease;
-        }
-        .red-curtain.pull { transform: translateY(-100%); }
-
-        /* BUTTONS */
+        
+        /* Premium Solid Buttons */
         .action-btn {
-            background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 10px 22px;
-            border: 2px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 3px 3px 0px #1a1a1a;
+            background: #ffd43b; color: #1a1a1a; font-weight: bold; 
+            padding: 12px 28px; border: 3px solid #1a1a1a;
+            border-radius: 14px; cursor: pointer; box-shadow: 4px 4px 0px #1a1a1a;
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+            transition: all 0.1s ease;
         }
-        .red-btn {
-            width: 100px; height: 100px; background: #ff4d4d; border: 4px solid #1a1a1a;
-            border-radius: 50%; box-shadow: 0 8px 0 #b32424, 0 15px 20px rgba(0,0,0,0.2);
-            cursor: pointer; transition: all 0.1s ease;
-        }
-        .red-btn:active { transform: translateY(4px); box-shadow: 0 4px 0 #b32424, 0 8px 10px rgba(0,0,0,0.2); }
+        .action-btn:active { transform: translateY(2px); box-shadow: 2px 2px 0px #1a1a1a; }
     </style>
 </head>
 <body>
 
-<div class="app-container" id="bg-box">
+<div class="app-container" id="main-box">
 
-    <!-- SCREEN 1: KNOCK KNOCK DOOR -->
-    <div class="screen active" id="s1">
-        <div class="door-container">
-            <p style="font-size: 14px; font-style: italic; margin-bottom: 15px; color: #333; font-weight: 500;">knock knock...</p>
-            <!-- 100% Superfast bypass logic lagaya hai click ke liye -->
-            <div class="red-door" onclick="goScreen(2)">
-                <div class="door-knob"></div>
-            </div>
-            <h2>HEY ROSHNI ❤️.</h2>
-            <p style="font-size: 11px; color:#444; margin: 5px 0 15px; font-weight: 500;">I made a tiny place on the internet for you.<br><span style="color:#ff3366; font-weight:bold; border-bottom:2px dashed #ff3366;">There is only one rule.</span></p>
-            <button class="door-btn" onclick="goScreen(2)">WHAT'S THE RULE?</button>
-        </div>
+    <!-- PAGE 1: THE WELCOME COVER -->
+    <div class="screen active" id="p1">
+        <span style="font-size: 40px; margin-bottom: 15px;">🏛️</span>
+        <h2 style="font-size: 22px;">Welcome to the<br>Museum of Us ✨</h2>
+        <p style="font-size: 12px; color: #1a1a1a; margin-bottom: 30px; font-weight: 500;">A tiny beautiful place on the internet, made specially for Roshni.</p>
+        <button class="action-btn" onclick="nextPage(2)">START TOUR →</button>
     </div>
 
-    <!-- SCREEN 2: WELCOME TO MUSEUM HUBS -->
-    <div class="screen" id="s2">
-        <h2>Welcome to the extremely<br>prestigious Museum of Us.</h2>
-        <p style="font-size: 11px; color: #555;">Please don't touch anything... obviously, touch everything.</p>
-        
-        <div class="hub-row">
-            <div class="exhibit-thumb" onclick="goScreen(3)">
-                <span style="font-size:18px; margin-bottom:5px;">🎬</span> EXHIBIT 001 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
-            </div>
-            <div class="exhibit-thumb" onclick="goScreen(4)">
-                <span style="font-size:18px; margin-bottom:5px;">💬</span> EXHIBIT 002 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
-            </div>
-            <div class="exhibit-thumb" onclick="goScreen(5)">
-                <span style="font-size:18px; margin-bottom:5px;">🏛️</span> EXHIBIT 003 <span style="font-size:8px; background:#e3faf2; border:1px solid #1a1a1a; border-radius:8px; padding:1px 4px; margin-top:5px;">Tap</span>
-            </div>
-        </div>
-        <button class="action-btn" onclick="goScreen(6)">FINISH TOUR →</button>
-    </div>
-
-    <!-- SCREEN 3: EXHIBIT 001 -->
-    <div class="screen" id="s3" style="background:#e9e4db;">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #001</span>
-        <div class="card-frame" style="background:#20c997;">
-            <p style="font-size:14px; font-weight:bold; color:white;">Let's clean up our friendship history.</p>
-            <div style="display:flex; gap:10px; justify-content:center; margin:15px 0;">
-                <button class="action-btn" style="background:#ff6b6b; color:white;" onmouseover="runAway(this)">DELETE</button>
-                <button class="action-btn" style="background:white;" onclick="alert('Smart choice! History kept safe! ❤️')">KEEP</button>
-            </div>
-            <p style="font-size:10px; font-weight:bold; color:white;">no takebacks!</p>
-        </div>
-        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
-    </div>
-
-    <!-- SCREEN 4: EXHIBIT 002 -->
-    <div class="screen" id="s4" style="background:#e9e4db;">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #002</span>
+    <!-- PAGE 2: EXHIBIT 1 - BOTH OF YOU -->
+    <div class="screen" id="p2">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #001</span>
         <div class="card-frame">
-            <p style="font-size: 14px; line-height: 1.6; color: #1a1a1a; font-weight: 500; text-align:left;">
-                "Hamari bakwaas chats 🗣️, random calls 📞 aur endless laughs 😹... this is the best part and reason of my happiness. 💛"
+            <!-- Tum dono ki pehli wali photo -->
+            <div class="pic-box" style="background-image: url('https://postimg.cc');"></div>
+            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin: 0;">"Friendship is mostly just finding a person whose weirdness is compatible with yours."</p>
+        </div>
+        <button class="action-btn" onclick="nextPage(3)">NEXT EXHIBIT →</button>
+    </div>
+
+    <!-- PAGE 3: EXHIBIT 2 - THE TEXT MESSAGE -->
+    <div class="screen" id="p3">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 20px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #002</span>
+        <div class="card-frame" style="background: #fdf6e2; padding: 25px 20px;">
+            <p style="font-size: 15px; line-height: 1.7; color: #1a1a1a; font-weight: 600; text-align: left; margin: 0;">
+                "Hamari bakwaas chats 🗣️, random calls 📞 aur endless laughs 😹... this is the best part and real reason of my happiness. 💛"
             </p>
         </div>
-        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
+        <button class="action-btn" onclick="nextPage(4)">NEXT EXHIBIT →</button>
     </div>
 
-    <!-- SCREEN 5: EXHIBIT 003 -->
-    <div class="screen" id="s5" style="background:#e9e4db;">
-        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #003</span>
+    <!-- PAGE 4: EXHIBIT 3 - ROSHNI NEW PHOTO REVEAL -->
+    <div class="screen" id="p4">
+        <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 12px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px; box-shadow: 2px 2px 0px #1a1a1a;">EXHIBIT #003</span>
         <div class="card-frame">
-            <p style="font-size:11px; font-weight:bold; margin-bottom:8px;">Proof that friendship is mostly just finding one person whose weirdness is compatible with yours.</p>
-            <div class="curtain-container" onclick="pullCurtain()">
-                <!-- Tum dono ki asli photo perfectamente embedded hai -->
-                <div class="pic-box" style="background-image: url('https://postimg.cc'); height:100%; margin:0;"></div>
-                <div class="red-curtain" id="curtain-layer"></div>
-            </div>
-            <p style="font-size:10px; color:#777;" id="curtain-hint">👆 pull the curtain aside</p>
+            <!-- 👇 Roshni ki abhi bheji hui single pyaari photo -->
+            <div class="pic-box" style="background-image: url('https://postimg.cc');"></div>
+            <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0 0;">✨ Happy Friendship Day Roshni ✨</p>
         </div>
-        <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
+        <button class="action-btn" onclick="nextPage(5)">VERIFY TOUR →</button>
     </div>
 
-    <!-- SCREEN 6: RED BUTTON -->
-    <div class="screen" id="s6" style="background:#fbf7f4;">
-        <h2 style="color:#777; font-size:16px;">do NOT.</h2>
-        <div style="background:#ffd43b; border:2px solid #1a1a1a; padding:4px 15px; font-weight:bold; font-size:11px; border-radius:8px; margin: 15px 0 30px;">DO NOT PRESS</div>
-        <div class="red-btn" onclick="startDiagnostic()"></div>
-        <p style="font-size:11px; color:#777; margin-top:15px;">seriously, do not.</p>
+    <!-- PAGE 5: THE FINAL LOCK -->
+    <div class="screen" id="p5">
+        <span style="font-size: 35px; margin-bottom: 10px;">🔒</span>
+        <p style="font-size: 11px; color: #777; font-weight: bold; margin: 0;">FINAL VERDICT:</p>
+        <h1 style="font-size: 21px; font-weight: 900; color: #1a1a1a; margin: 10px 0 15px; line-height: 1.3;">YOU KNOW WAY TOO MUCH.</h1>
+        <p style="font-size: 13px; color: #444; margin: 0 15px 25px; line-height: 1.6;">Unfortunately, there is no escape now. We are friends for life.</p>
+        
+        <div style="background: #ffe3e3; border: 3px dashed #ffc9c9; padding: 12px; font-weight: bold; font-size: 12px; color: #c92a2a; border-radius: 12px; margin-bottom: 30px; box-shadow: 3px 3px 0px rgba(0,0,0,0.05);">
+            NO CANCELLATIONS.<br>NO REFUNDS.
+        </div>
+        
+        <button class="action-btn" style="background: #ffd43b; width: 90%;" onclick="alert('System Locked! Dosti has been officially confirmed forever! 🤝❤️')">ACCEPT MY FATE</button>
     </div>
 
-    <!-- SCREEN 7: DIAGNOSTIC LOADING -->
-    <div class="screen" id="s7" style="background:#fbf7f4;">
-        <h2 style="color:#777; font-size:16px;">do NOT.</h2>
+</div>
+
+<script>
+    function nextPage(pageNum) {
+        // Saari screens ko band karo
+        var screens = document.querySelectorAll('.screen');
+        for (var i = 0; i < screens.length; i++) {
+            screens[i].classList.remove('active');
+        }
+        // Sirf target page ko chalu karo
+        document.getElementById('p' + pageNum).classList.add('active');
+        
+        // Dynamic background colors according to scrapbook pages
+        var box = document.getElementById('main-box');
+        if (pageNum === 1) box.style.background = '#50bfa5'; // Teal
+        else if (pageNum === 3) box.style.background = '#fcc419'; // Yellow Theme
+        else if (pageNum === 5) box.style.background = '#fbf7f4'; // Final White
+        else box.style.background = '#e9e4db'; // Soft Retro Card color
+    }
+</script>
+
+</body>
+</html>
