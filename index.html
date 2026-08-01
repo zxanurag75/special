@@ -14,7 +14,7 @@
         }
         .app-container {
             width: 340px; height: 580px;
-            background: #cbd3e3; /* Screen 1 background */
+            background: #cbd3e3; /* Screen 1 Background */
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative; overflow: hidden;
@@ -39,11 +39,11 @@
             border: 4px solid #1a1a1a; border-radius: 50px 50px 0 0;
             position: relative; cursor: pointer; margin-bottom: 25px;
             box-shadow: 5px 5px 0px #1a1a1a;
-            transition: transform 0.8s ease;
+            transition: transform 0.6s ease;
             transform-origin: left;
         }
         .red-door.open {
-            transform: perspective(1200px) rotateY(-105deg);
+            transform: perspective(1200px) rotateY(-115deg);
         }
         .door-knob {
             width: 12px; height: 12px; background: #ffd43b;
@@ -84,11 +84,11 @@
         .red-curtain {
             width: 100%; height: 100%; background: #c92a2a;
             background-image: repeating-linear-gradient(90deg, #c92a2a, #c92a2a 10px, #b01e1e 10px, #b01e1e 20px);
-            position: absolute; top: 0; left: 0; transition: transform 1s ease;
+            position: absolute; top: 0; left: 0; transition: transform 0.8s ease;
         }
         .red-curtain.pull { transform: translateY(-100%); }
 
-        /* BUTTON GENERICS */
+        /* BUTTONS */
         .action-btn {
             background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 10px 22px;
             border: 2px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 3px 3px 0px #1a1a1a;
@@ -137,7 +137,7 @@
         <button class="action-btn" onclick="goScreen(6)">FINISH TOUR →</button>
     </div>
 
-    <!-- SCREEN 3: EXHIBIT 001 (PRANK CARD) -->
+    <!-- SCREEN 3: EXHIBIT 001 -->
     <div class="screen" id="s3" style="background:#e9e4db;">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #001</span>
         <div class="card-frame" style="background:#20c997;">
@@ -151,7 +151,7 @@
         <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
     </div>
 
-    <!-- SCREEN 4: EXHIBIT 002 (TEXT MESSAGE) -->
+    <!-- SCREEN 4: EXHIBIT 002 -->
     <div class="screen" id="s4" style="background:#e9e4db;">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #002</span>
         <div class="card-frame">
@@ -162,13 +162,13 @@
         <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
     </div>
 
-    <!-- SCREEN 5: EXHIBIT 003 (CURTAIN & YOUR ACTUAL PHOTO) -->
+    <!-- SCREEN 5: EXHIBIT 003 -->
     <div class="screen" id="s5" style="background:#e9e4db;">
         <span style="background: #ffd43b; border: 2px solid #1a1a1a; padding: 3px 10px; font-size: 10px; font-weight: bold; border-radius: 20px; margin-bottom: 15px;">EXHIBIT #003</span>
         <div class="card-frame">
             <p style="font-size:11px; font-weight:bold; margin-bottom:8px;">Proof that friendship is mostly just finding one person whose weirdness is compatible with yours.</p>
             <div class="curtain-container" onclick="pullCurtain()">
-                <!-- Tum dono ki asli photo perfectly embedded hai -->
+                <!-- Aap dono ki photo ka link set hai -->
                 <div class="pic-box" style="background-image: url('https://postimg.cc'); height:100%; margin:0;"></div>
                 <div class="red-curtain" id="curtain-layer"></div>
             </div>
@@ -177,10 +177,12 @@
         <button class="action-btn" onclick="goScreen(2)">← BACK TO HUB</button>
     </div>
 
-    <!-- SCREEN 6: DO NOT PRESS RED BUTTON -->
+    <!-- SCREEN 6: RED BUTTON -->
     <div class="screen" id="s6" style="background:#fbf7f4;">
         <h2 style="color:#777; font-size:16px;">do NOT.</h2>
         <div style="background:#ffd43b; border:2px solid #1a1a1a; padding:4px 15px; font-weight:bold; font-size:11px; border-radius:8px; margin: 15px 0 30px;">DO NOT PRESS</div>
         <div class="red-btn" onclick="startDiagnostic()"></div>
         <p style="font-size:11px; color:#777; margin-top:15px;">seriously, do not.</p>
     </div>
+
+    <!-- SCREEN 7: DIAGNOSTIC LOADING -->
