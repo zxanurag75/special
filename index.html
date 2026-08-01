@@ -3,124 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Friendship Day! ✨</title>
+    <title>Museum of Us 🏛️✨</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #fff9db 0%, #fff3bf 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
+            background: #fbf7f4;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; font-family: 'Segoe UI', sans-serif;
             overflow: hidden;
         }
-        .container {
-            text-align: center;
-            perspective: 1000px;
+        .app-container {
+            width: 340px; height: 580px;
+            background: #50bfa5; /* Same exact Teal Green Color */
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
+            border: 4px solid #1a1a1a;
         }
-        .envelope {
-            width: 290px;
-            height: 190px;
-            background: #fab005; /* Cute Yellow Friendship Theme */
-            position: relative;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            cursor: pointer;
-            transition: transform 0.4s ease;
-            margin: 0 auto;
+        .screen {
+            width: 100%; height: 100%;
+            display: none; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 20px; box-sizing: border-box; text-align: center;
         }
-        .envelope:hover {
-            transform: translateY(-8px);
+        .screen.active { display: flex; }
+        
+        h2 { font-size: 18px; color: #1a1a1a; margin-bottom: 10px; font-weight: bold; }
+        .sub { font-size: 12px; color: #1a1a1a; margin-bottom: 15px; font-weight: 500; }
+        
+        /* Same Polaroid Style White Frame */
+        .card-frame {
+            width: 80%; background: white; border: 3px solid #1a1a1a;
+            border-radius: 16px; padding: 15px; box-shadow: 4px 4px 0px #1a1a1a;
+            margin-bottom: 15px; text-align: center;
         }
-        .envelope::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-left: 145px solid transparent;
-            border-right: 145px solid transparent;
-            border-top: 105px solid #fcc419;
-            transform-origin: top;
-            transition: transform 0.4s ease 0.1s;
-            z-index: 3;
+        .pic-box {
+            width: 100%; height: 190px;
+            border: 2px solid #1a1a1a; border-radius: 10px;
+            background-image: url('https://unsplash.com');
+            background-size: cover; background-position: center;
+            margin-bottom: 12px;
         }
-        .envelope.open::before {
-            transform: rotateX(180deg);
-            z-index: 1;
+        .btn-row { display: flex; gap: 15px; justify-content: center; width: 100%; position: relative; }
+        .action-btn {
+            padding: 8px 18px; font-weight: bold; border: 2px solid #1a1a1a;
+            border-radius: 12px; cursor: pointer; box-shadow: 2px 2px 0px #1a1a1a;
+            font-size: 12px;
         }
-        .seal {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 35px;
-            z-index: 4;
-            transition: all 0.3s ease;
-        }
-        .envelope.open .seal {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0);
-        }
-        .letter {
-            width: 260px;
-            background: white;
-            padding: 25px 15px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 2;
-            opacity: 0;
-        }
-        .envelope.open .letter {
-            opacity: 1;
-            transform: translateY(-150px) scale(1.05);
-            z-index: 5;
-        }
-        h2 { color: #e67e22; margin-top: 0; font-size: 22px; font-weight: bold; }
-        p { color: #495057; font-size: 14px; line-height: 1.6; }
-        .highlight { color: #f59f00; font-weight: bold; }
-        .hint {
-            color: #e67e22;
-            font-weight: bold;
-            margin-top: 20px;
-            font-size: 15px;
-            animation: bounce 1.5s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
+        .btn-delete { background: #ff6b6b; color: white; transition: all 0.1s ease; }
+        .btn-keep { background: #ffffff; color: #1a1a1a; }
+        .btn-final { background: #ffd43b; color: #1a1a1a; width: 85%; padding: 12px; font-size: 14px; font-weight: bold; border: 2px solid #1a1a1a; border-radius: 12px; box-shadow: 3px 3px 0px #1a1a1a; cursor: pointer; }
+
+        /* Final Screen Button style */
+        .accept-btn { background: #ffd43b; color: #1a1a1a; font-weight: bold; padding: 12px 25px; border: 3px solid #1a1a1a; border-radius: 12px; cursor: pointer; box-shadow: 4px 4px 0px #1a1a1a; font-size: 14px; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="envelope" id="envelope" onclick="openLetter()">
-        <div class="seal">⭐</div>
-        <div class="letter">
-            <h2>Happy Friendship Day! 🌸</h2>
-            <p>Bhai sach btau, life mein bahut saare dost aate jaate hain, par tum jaisa <span class="highlight">saccha aur best dost</span> milna sach mein naseeb ki baat hai.</p>
-            <p>Har mazaak, har help, aur har baat ke liye Thank You! Humari dosti hamesha aisi hi rahegi. ✨🤝</p>
+<div class="app-container">
+
+    <!-- SCREEN 1: THE PRANK -->
+    <div class="screen active" id="s1">
+        <h2>Let's clean up our<br>friendship history.</h2>
+        <div class="btn-row" style="margin-bottom: 15px;">
+            <button class="action-btn btn-delete" id="del-btn" onmouseover="runAway()">← DELETE</button>
+            <button class="action-btn btn-keep" onclick="goToScreen(2)">KEEP →</button>
+        </div>
+        <div class="card-frame">
+            <div class="pic-box"></div>
+            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; margin: 0;">no takebacks!</p>
         </div>
     </div>
-    <div class="hint" id="hint-text">Ispar click karke open karo... 🎁</div>
+
+    <!-- SCREEN 2: FRIENDSHIP CARD -->
+    <div class="screen" id="s2">
+        <h2>Let's clean up our<br>friendship history.</h2>
+        <div class="btn-row" style="margin-bottom: 15px;">
+            <button class="action-btn btn-delete" style="opacity:0.5; cursor:not-allowed;">← DELETE</button>
+            <button class="action-btn btn-keep" style="background:#ffd43b;">KEEP →</button>
+        </div>
+        <div class="card-frame">
+            <div class="pic-box"></div>
+            <p style="font-size: 14px; font-weight: bold; color: #ff3366; margin: 5px 0;">✨ Happy Friendship Day Roshni ✨</p>
+            <p style="font-size: 11px; font-weight: bold; color: #1a1a1a; margin: 0;">no takebacks!</p>
+        </div>
+        <button class="btn-final" onclick="goToScreen(3)">NEXT STEPS →</button>
+    </div>
+
+    <!-- SCREEN 3: FINAL VERDICT -->
+    <div class="screen" id="s3" style="background: #fbf7f4;">
+        <h2>do NOT.</h2>
+        <p style="font-size: 11px; font-weight: bold; color: #777; margin-top:0;">RESULT:</p>
+        <h1 style="font-size: 20px; font-weight: 900; color: #1a1a1a; margin: 10px 0;">YOU KNOW WAY TOO MUCH.</h1>
+        <p style="font-size: 13px; color: #555; line-height: 1.5; margin: 5px 20px;">Unfortunately, we are now friends for life.</p>
+        
+        <div style="background:#fff3cd; padding:6px 12px; border:2px dashed #ffeeba; border-radius:8px; font-size:11px; font-weight:bold; color:#b78103; margin: 10px 0;">
+            NO CANCELLATIONS.<br>NO REFUNDS.
+        </div>
+        
+        <button class="accept-btn" onclick="alert('System Locked! Dosti confirm ho gayi hai! 🤝❤️')">ACCEPT MY FATE</button>
+    </div>
+
 </div>
 
 <script>
-    function openLetter() {
-        const env = document.getElementById('envelope');
-        const hint = document.getElementById('hint-text');
-        env.classList.toggle('open');
-        if(env.classList.contains('open')) {
-            hint.innerHTML = "Humari pyaari dosti ke naam! 🤝✨";
-        } else {
-            hint.innerHTML = "Ispar click karke open karo... 🎁";
-        }
+    function goToScreen(num) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('s' + num).classList.add('active');
+    }
+
+    function runAway() {
+        const btn = document.getElementById('del-btn');
+        const randomX = Math.floor(Math.random() * 60) - 30;
+        const randomY = Math.floor(Math.random() * 40) - 20;
+        btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
     }
 </script>
 
